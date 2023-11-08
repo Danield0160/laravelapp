@@ -13,7 +13,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::view("/","principal")->name("pri");
+Route::get('/', function () {
+    //$nombre = 'pepe';
+    //$lista = ['perro','gato','avestruz'];
+    $diccionario = [['num' => 'uno'],['num' => 'dos'],['num' => 'tres']];
+    return view('principal', ['dic' => $diccionario]);
+})->name('pri');
+
+//Route::view("/","principal")->name("pri");
 Route::view("/usuarios","usuarios")->name("usr");
 Route::view("/contacto","contacto")->name("con");
 Route::view("/blog","blog")->name("blg");
