@@ -7,6 +7,7 @@
     </head>
     <body>
         <x-layouts.nav/>
+        {{ $suma }}
         {{ $slot }}
     </body>
 </html>
