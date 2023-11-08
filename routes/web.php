@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::view("/","principal")->name("pri");
+Route::view("/usuarios","usuarios")->name("usr");
+Route::view("/contacto","contacto")->name("con");
+Route::view("/blog","blog")->name("blg");
