@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UsuarioController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,6 +20,8 @@ Route::get('/', function () {
     $diccionario = [['num' => 'uno'],['num' => 'dos'],['num' => 'tres']];
     return view('principal', ['dic' => $diccionario]);
 })->name('pri');
+
+Route::get("/usuarios", UsuarioController::class)->name("usr");
 
 //Route::view("/","principal")->name("pri");
 Route::view("/usuarios","usuarios")->name("usr");
