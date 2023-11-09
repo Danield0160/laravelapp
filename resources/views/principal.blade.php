@@ -5,7 +5,7 @@
     <p>estamos probando</p>
     @dump($dic)
 
-    <p>{{ 'Esto lo hacemos con BLADE' }}</p>
+    {{-- <p>{{ 'Esto lo hacemos con BLADE' }}</p>
     @foreach ($dic as $val)
         {{ $val['num'] }}
     @endforeach
@@ -17,7 +17,7 @@
     foreach ($dic as $val) {
         print $val['num'] . ' ';
     }
-    ?>
+    ?> --}}
 
 
 </x-layouts.app>

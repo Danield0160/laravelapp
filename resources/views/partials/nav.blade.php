@@ -4,5 +4,6 @@
         <li><a href='{{ route('usr') }}'>Usuarios</a></li>
         <li><a href='{{ route('blg') }}'>Blog</a></li>
         <li><a href='{{ route('con') }}'>Contacto</a></li>
+        <li><a href='{{ route('cur') }}'>cursos</a></li>
     </ul>
 </nav>

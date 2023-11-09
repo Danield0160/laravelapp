@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CursoController;
 use App\Http\Controllers\UsuarioController;
 use Illuminate\Support\Facades\Route;
 
@@ -21,9 +22,12 @@ Route::get('/', function () {
     return view('principal', ['dic' => $diccionario]);
 })->name('pri');
 
-Route::get("/usuarios", UsuarioController::class)->name("usr");
+// Route::get("/usuarios", UsuarioController::class)->name("usr");
+// Route::get("/usuarios", UsuarioController@show)->name("usr");
+Route::get("/usuarios", [UsuarioController::class,'index'])->name("usr");
 
 //Route::view("/","principal")->name("pri");
-Route::view("/usuarios","usuarios")->name("usr");
+// Route::view("/usuarios","usuarios")->name("usr");
 Route::view("/contacto","contacto")->name("con");
 Route::view("/blog","blog")->name("blg");
+Route::view("/cursos","cursos/{curso}",[CursoController::class,'persona'])->name("cur");
