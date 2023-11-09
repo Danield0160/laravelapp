@@ -7,7 +7,7 @@ class CursoController extends Controller
 {
     public function show($curso)
     {
-        return view('cursos.brian', ['curso' => $curso]);
+        return view('cursos.show', ['curso' => $curso]);
     }
 
     public function persona($persona)
