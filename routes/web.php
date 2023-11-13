@@ -30,4 +30,7 @@ Route::get("/usuarios", [UsuarioController::class,'index'])->name("usr");
 // Route::view("/usuarios","usuarios")->name("usr");
 Route::view("/contacto","contacto")->name("con");
 Route::view("/blog","blog")->name("blg");
-Route::view("/cursos","cursos/{curso}",[CursoController::class,'persona'])->name("cur");
+
+Route::get("cursos/{curso}",[CursoController::class,'show'])->name("cur");
+
+// Route::view("/cursos","cursos/{curso}",[CursoController::class,'show'])->name("cur");
