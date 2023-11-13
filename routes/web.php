@@ -24,6 +24,7 @@ Route::get('/', function () {
 
 // Route::get("/usuarios", UsuarioController::class)->name("usr");
 // Route::get("/usuarios", UsuarioController@show)->name("usr");
+
 Route::get("/usuarios", [UsuarioController::class,'index'])->name("usr");
 
 //Route::view("/","principal")->name("pri");
