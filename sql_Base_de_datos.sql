@@ -1,3 +1,10 @@
+create database laravelapp;
+
+create user "laravel"@"localhost" IDENTIFIED BY "Csas1234";
+GRANT ALL PRIVILEGES ON laravelapp TO "laravel"@"localhost";
+FLush PRIVILEGES;
+
+
 use laravelapp;
 CREATE TABLE usuario(
     usuario varchar(30) PRIMARY KEY,
