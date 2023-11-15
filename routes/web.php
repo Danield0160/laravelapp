@@ -3,8 +3,6 @@
 use App\Http\Controllers\CursoController;
 use App\Http\Controllers\UsuarioController;
 use Illuminate\Support\Facades\Route;
-use Barryvdh\Debugbar\ServiceProvider;
-
 
 /*
 |--------------------------------------------------------------------------
@@ -21,7 +19,9 @@ Route::get('/', function () {
     //$nombre = 'pepe';
     //$lista = ['perro','gato','avestruz'];
     $diccionario = [['num' => 'uno'],['num' => 'dos'],['num' => 'tres']];
-    Debugbar::info('!');
+
+    app('debugbar')->info('info message'); // console log en debugbar
+
     return view('principal', ['dic' => $diccionario]);
 })->name('pri');
 
