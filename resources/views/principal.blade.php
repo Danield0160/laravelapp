@@ -5,6 +5,12 @@
     <p>estamos probando</p>
     @dump($dic)
 
+    
+
+
+
+
+
     {{-- <p>{{ 'Esto lo hacemos con BLADE' }}</p>
     @foreach ($dic as $val)
         {{ $val['num'] }}
