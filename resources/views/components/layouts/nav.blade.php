@@ -5,6 +5,7 @@
         <title>{{ $titulo ?? 'Defecto' }}</title>
     </head>
     <body>
+        
         @include('partials.nav')
         {{ $slot }}
     </body>
