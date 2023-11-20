@@ -1,7 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use Illuminate\Http\Request;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\InicioController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,5 +16,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome'); 
+    return view('login'); 
 });
+
+Route::post("/", [LoginController::class ,"comprobar"]);
+
+Route::get("/inicio",[InicioController::class,"index"])->name("inicio");
+    
