@@ -10,7 +10,7 @@
 
 <body>
 
-    <form action="/" method="POST">
+    <form action="/login" method="POST">
         @csrf
 
         <p>Nombre</p>
@@ -23,7 +23,7 @@
     </form>
 
     <?php
-    if(isset($info)){
+    if (isset($info)) {
         echo $info;
     }
     ?>

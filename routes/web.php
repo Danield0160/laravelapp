@@ -14,12 +14,13 @@ use App\Http\Controllers\InicioController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::redirect("/","/login");
 
-Route::get('/', function () {
+Route::get('/login', function () {
     return view('login'); 
 });
 
-Route::post("/", [LoginController::class ,"comprobar"]);
+Route::post("/login", [LoginController::class ,"comprobar"]);
 
 Route::get("/inicio",[InicioController::class,"index"])->name("inicio");
     
