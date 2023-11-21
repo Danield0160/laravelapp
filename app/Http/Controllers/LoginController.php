@@ -12,15 +12,15 @@ class LoginController extends Controller
         $nombre = $request->nombre;
         $password = $request->password;
         $miUsuario = Usuario::where("nombre",$nombre)->first();
-
-        if($miUsuario && $miUsuario->clave == $password){
-            session(['usuario' => $nombre]);
-            return redirect("/inicio");
-        }else{
-            session(['usuario' => null]);
+        if(isset($request)){
+            if($miUsuario && $miUsuario->clave == $password){
+                session(['usuario' => $nombre]);
+                return redirect("/inicio");
+            }else{
+                session(['usuario' => null]);
+                return view("login",["info"=>"ERROR, login fallido"]);
+            }
         }
-
-
-        return "no login";
+        return view("login");
     }
 }

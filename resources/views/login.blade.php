@@ -22,6 +22,11 @@
         <button type="submit">Enviar</button>
     </form>
 
+    <?php
+    if(isset($info)){
+        echo $info;
+    }
+    ?>
 </body>
 
 </html>
