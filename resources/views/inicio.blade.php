@@ -9,6 +9,7 @@
 </head>
 <body>
     <h1>Hola <?php echo session("usuario") ?></h1>
+    <a href="/logout"><button>Logout</button></a>
 
     <table>
         <tr>

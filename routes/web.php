@@ -19,7 +19,10 @@ Route::redirect("/","/login");
 Route::get('/login', function () {
     return view('login'); 
 });
-
+Route::get("/logout",function(){
+    session(['usuario' => null]);
+    return redirect("/login");
+});
 Route::post("/login", [LoginController::class ,"comprobar"]);
 
 Route::get("/inicio",[InicioController::class,"index"])->name("inicio");
