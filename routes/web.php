@@ -14,16 +14,26 @@ use App\Http\Controllers\InicioController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+// hace que el "home" sea la pagina de login 
 Route::redirect("/","/login");
 
+
 Route::get('/login', function () {
+    if((session("usuario"))){
+        return redirect("inicio");
+    }
     return view('login'); 
 });
+
+// cuando envias el formulario de login lo comprueba y te dirige al inicio si esta bien
+Route::post("/login", [LoginController::class ,"comprobar"]);
+
+// la url de logout quita datos de la sesion y te dirige al login 
 Route::get("/logout",function(){
     session(['usuario' => null]);
     return redirect("/login");
 });
-Route::post("/login", [LoginController::class ,"comprobar"]);
 
+// pagina principal, te conectas cuando esta bien el login, parte [R: read]
 Route::get("/inicio",[InicioController::class,"index"])->name("inicio");
-    
