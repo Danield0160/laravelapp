@@ -14,6 +14,6 @@ class InicioController extends Controller
             return redirect("/");
         }
         $libros = Libro::all();
-        return view("inicio",["libros" => $libros]);
+        return view("inicio",["libros" => json_encode($libros)]);
     }
 }
