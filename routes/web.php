@@ -15,7 +15,7 @@ use App\Http\Controllers\InicioController;
 |
 */
 
-// hace que el "home" sea la pagina de login 
+// hace que el "home" sea la pagina de login
 Route::redirect("/","/login");
 
 
@@ -23,13 +23,13 @@ Route::get('/login', function () {
     if((session("usuario"))){
         return redirect("inicio");
     }
-    return view('login'); 
+    return view('login');
 });
 
 // cuando envias el formulario de login lo comprueba y te dirige al inicio si esta bien
 Route::post("/login", [LoginController::class ,"comprobar"]);
 
-// la url de logout quita datos de la sesion y te dirige al login 
+// la url de logout quita datos de la sesion y te dirige al login
 Route::get("/logout",function(){
     session(['usuario' => null]);
     return redirect("/login");
